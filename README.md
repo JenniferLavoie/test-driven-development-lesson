@@ -2,6 +2,7 @@
 ### Objectives
 YWBAT 
 * explain how TDD is used within AGILE
+    * Agile vs Waterfall
 * write a function given test requirements
 * execute a nosetest to verify if your function passes or fails
 
@@ -16,6 +17,9 @@ YWBAT
 Since we're only dealing with the **Tasks** section of this diagram, let's see how **TDD** fits into it
 ![](images/tdd.png)
 
+### Why TDD?
+![](images/tdd-meme.png)
+
 ### Let's go through an example
 After the sprint planning meeting on Wednesday morning, you've been tasked with the following requirements. Add to the source code functionality that will:
 * New user signs up on site with email and password
@@ -23,7 +27,7 @@ After the sprint planning meeting on Wednesday morning, you've been tasked with 
     * at least 15 characters
     * at least one character is a digit
     * at least one character is a special symbol (?!@#\$\*)
-    * at least one characrer is uppercase
+    * at least one character is uppercase
 
 ### Common Best Practices
 * Use IDE that supports a terminal

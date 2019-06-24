@@ -2,39 +2,65 @@ import sys
 sys.path.append("../")
 from password_check import password_check
 
+
+# Test Case 1 - testing password length
 def test_password_length_short():
     password = "thisismypasswd"
-    expected = password_check(password)
+    expected = password_check(password) # should be False
     actual = False
     assert actual==expected, f"Password length incorrect, actual={actual}, expected={expected}"
 
 
-def test_password_not_contains_one_digit():
-    password = "thisismypassword"
+def test_password_contains_one_digit():
+    password = "ThiSIsMyP@ssWord?"
     expected = password_check(password)
     actual = False
-    message = f"""Password format incorrect, does not contain digit, actual={actual}, expected={expected}"""
-    assert expected == actual, message
+    message = f"Password ({password}) did not contain digit but passed, actual={actual}, expected={expected}"
+    assert actual==expected, message
 
 
-def test_password_not_contains_spc_chrtr():
-    password = "thisismypassword"
+def test_password_contains_special_symbol():
+    password = "ThiSIsMyP4ssWord"
     expected = password_check(password)
     actual = False
-    message = f"""Password format incorrect, does not contain special character, actual={actual}, expected={expected}"""
-    assert expected == actual, message
+    message = f"Password did not contain special symbol but passed, actual={actual}, expected={expected}"
+    assert actual == expected, message
 
 
-def test_password_not_contains_one_upper():
-    password = "thisismypassword"
+def test_password_contains_one_upper():
+    password = "thisismyp4ssword?"
     expected = password_check(password)
-    actual = False
-    message = f"""Password format incorrect, does not contain upper, actual={actual}, expected={expected}"""
-    assert expected == actual, message
+    actual = False 
+    message = f"Password did not contain one uppercase but passed, actual={actual}, expected={expected}"
+    assert actual == expected, message
 
 
-def test_password_length_correct():
-    password = "Th1s1smyPa$$word"
-    expected = password_check(password)
-    actual = True
-    assert actual == expected, f"Password is marked as incorrect, but is correct, actual={actual}, expected={expected}"
+# def test_password_not_contains_one_digit():
+#     password = "thisismypassword"
+#     expected = password_check(password)
+#     actual = False
+#     message = f"""Password format incorrect, does not contain digit, actual={actual}, expected={expected}"""
+#     assert expected == actual, message
+
+
+# def test_password_not_contains_spc_chrtr():
+#     password = "thisismypassword"
+#     expected = password_check(password)
+#     actual = False
+#     message = f"""Password format incorrect, does not contain special character, actual={actual}, expected={expected}"""
+#     assert expected == actual, message
+
+
+# def test_password_not_contains_one_upper():
+#     password = "thisismypassword"
+#     expected = password_check(password)
+#     actual = False
+#     message = f"""Password format incorrect, does not contain upper, actual={actual}, expected={expected}"""
+#     assert expected == actual, message
+
+
+# def test_password_length_correct():
+#     password = "Th1s1smyPa$$word"
+#     expected = password_check(password)
+#     actual = True
+#     assert actual == expected, f"Password is marked as incorrect, but is correct, actual={actual}, expected={expected}"
